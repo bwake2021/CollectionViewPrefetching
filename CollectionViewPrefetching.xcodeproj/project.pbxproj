@@ -20,8 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23B8F236F703A8E875BC098F /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
-		6CF1671925BADD9F27D00113 /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		710E74BBF5FB515B2677EE10 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		7D2472C7C0C52D1D9B2DD5A6 /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayData.swift; sourceTree = "<group>"; };
 		B5B537661D9D878E00B21855 /* CollectionViewPrefetching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewPrefetching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B537691D9D878E00B21855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,21 +48,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F9709CDA7CF808EA520B13D /* Configuration */ = {
+		47F60C978D752671591B5CB2 /* LICENSE */ = {
 			isa = PBXGroup;
 			children = (
-				6CF1671925BADD9F27D00113 /* SampleCode.xcconfig */,
-			);
-			name = Configuration;
-			sourceTree = "<group>";
-		};
-		3ED4767822978EB3398671BA /* LICENSE */ = {
-			isa = PBXGroup;
-			children = (
-				23B8F236F703A8E875BC098F /* LICENSE.txt */,
+				710E74BBF5FB515B2677EE10 /* LICENSE.txt */,
 			);
 			name = LICENSE;
 			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		598756325BDD8A3652F1BCF9 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				7D2472C7C0C52D1D9B2DD5A6 /* SampleCode.xcconfig */,
+			);
+			name = Configuration;
 			sourceTree = "<group>";
 		};
 		B5B5375D1D9D878E00B21855 = {
@@ -71,8 +71,8 @@
 				B5BA4AD51DC814E7001CE247 /* README.md */,
 				B5B537681D9D878E00B21855 /* CollectionViewPrefetching */,
 				B5B537671D9D878E00B21855 /* Products */,
-				1F9709CDA7CF808EA520B13D /* Configuration */,
-				3ED4767822978EB3398671BA /* LICENSE */,
+				598756325BDD8A3652F1BCF9 /* Configuration */,
+				47F60C978D752671591B5CB2 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,7 +217,7 @@
 /* Begin XCBuildConfiguration section */
 		B5B537761D9D878E00B21855 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CF1671925BADD9F27D00113 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 7D2472C7C0C52D1D9B2DD5A6 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -274,7 +274,7 @@
 		};
 		B5B537771D9D878E00B21855 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CF1671925BADD9F27D00113 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 7D2472C7C0C52D1D9B2DD5A6 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -324,7 +324,7 @@
 		};
 		B5B537791D9D878E00B21855 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CF1671925BADD9F27D00113 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 7D2472C7C0C52D1D9B2DD5A6 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -340,7 +340,7 @@
 		};
 		B5B5377A1D9D878E00B21855 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CF1671925BADD9F27D00113 /* SampleCode.xcconfig */;
+			baseConfigurationReference = 7D2472C7C0C52D1D9B2DD5A6 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
