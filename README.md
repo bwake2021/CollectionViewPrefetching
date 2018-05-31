@@ -4,7 +4,7 @@ Load data for collection view cells before they are displayed.
 
 ## Overview
 
-A collection view displays an ordered collection of cells in customizable layouts. The [`UICollectionViewDataSourcePrefetching`](https://developer.apple.com/documentation/uikit/uicollectionviewdatasourceprefetching?language=swift) protocol helps provide a smoother user experience by prefetching the data necessary for upcoming collection view cells. When you enable prefetching, the collection view requests the data before it needs to display the cell. When it's time to display the cell, the data is already locally cached.
+A collection view displays an ordered collection of cells in customizable layouts. The [`UICollectionViewDataSourcePrefetching`](https://developer.apple.com/documentation/uikit/uicollectionviewdatasourceprefetching) protocol helps provide a smoother user experience by prefetching the data necessary for upcoming collection view cells. When you enable prefetching, the collection view requests the data before it needs to display the cell. When it's time to display the cell, the data is already locally cached.
 
 The image below shows cells outside the bounds of the collection view that have been prefetched.   
 
@@ -14,7 +14,7 @@ The image below shows cells outside the bounds of the collection view that have 
 
 ## Enable Prefetching
 
-The root view controller uses an instance of the [`CustomDataSource`](x-source-tag://CustomDataSource) class to provide data to its [`UICollectionView`](https://developer.apple.com/documentation/uikit/uicollectionview?language=swift) instance. The `CustomDataSource` class implements the `UICollectionViewDataSourcePrefetching` protocol to begin fetching the data required to populate cells.
+The root view controller uses an instance of the [`CustomDataSource`](x-source-tag://CustomDataSource) class to provide data to its [`UICollectionView`](https://developer.apple.com/documentation/uikit/uicollectionview) instance. The `CustomDataSource` class implements the `UICollectionViewDataSourcePrefetching` protocol to begin fetching the data required to populate cells.
 
 ``` swift
 class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
@@ -26,7 +26,7 @@ In addition to assigning the `CustomDataSource` instance to the collection view'
 ``` swift
 // Set the collection view's data source.
 collectionView.dataSource = dataSource
-      
+
 // Set the collection view's prefetching data source.
 collectionView.prefetchDataSource = dataSource
 ```
@@ -36,7 +36,7 @@ collectionView.prefetchDataSource = dataSource
 
 You use data prefetching when loading data is a slow or expensive process—for example, when fetching data over the network. In these circumstances, perform data loading asynchronously. In this sample, the [`AsyncFetcher`](x-source-tag://AsyncFetcher) class is used to fetch data asynchronously, simulating a network request.
 
-First, implement the [`UICollectionViewDataSourcePrefetching`](https://developer.apple.com/documentation/uikit/uicollectionviewdatasourceprefetching?language=swift) prefetch method, invoking the appropriate method on the async fetcher:
+First, implement the [`UICollectionViewDataSourcePrefetching`](https://developer.apple.com/documentation/uikit/uicollectionviewdatasourceprefetching) prefetch method, invoking the appropriate method on the async fetcher:
 
 ``` swift
 func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
@@ -111,7 +111,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 ```
 [View in Source](x-source-tag://CellForItemAt)
 
-## Cancel Unnecessary Fetches 
+## Cancel Unnecessary Fetches
 
 Implement the [`collectionView(_:cancelPrefetchingForItemsAt:)`](https://developer.apple.com/documentation/uikit/uicollectionviewdatasourceprefetching/1771769-collectionview) delegate method to cancel any in-progress data fetches that are no longer required. An example of how to handle this is taken from the sample and shown below.
 
