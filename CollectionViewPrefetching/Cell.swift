@@ -13,7 +13,7 @@ final class Cell: UICollectionViewCell {
     static let reuseIdentifier = "Cell"
 
     /// The `UUID` for the data this cell is presenting.
-    var representedId: UUID?
+    var representedIdentifier: UUID?
 
     // MARK: UICollectionViewCell
 

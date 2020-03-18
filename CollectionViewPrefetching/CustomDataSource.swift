@@ -12,7 +12,7 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
     // MARK: Properties
     
     struct Model {
-        var id = UUID()
+        var identifier = UUID()
         
         // Add additional properties for your own model here.
     }
@@ -38,11 +38,11 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
         }
         
         let model = models[indexPath.row]
-        let id = model.id
-        cell.representedId = id
+        let identifier = model.identifier
+        cell.representedIdentifier = identifier
         
         // Check if the `asyncFetcher` has already fetched data for the specified identifier.
-        if let fetchedData = asyncFetcher.fetchedData(for: id) {
+        if let fetchedData = asyncFetcher.fetchedData(for: identifier) {
             // The data has already been fetched and cached; use it to configure the cell.
             cell.configure(with: fetchedData)
         } else {
@@ -50,14 +50,14 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
             cell.configure(with: nil)
 
             // Ask the `asyncFetcher` to fetch data for the specified identifier.
-            asyncFetcher.fetchAsync(id) { fetchedData in
+            asyncFetcher.fetchAsync(identifier) { fetchedData in
                 DispatchQueue.main.async {
                     /*
                      The `asyncFetcher` has fetched data for the identifier. Before
                      updating the cell, check if it has been recycled by the
                      collection view to represent other data.
                      */
-                    guard cell.representedId == id else { return }
+                    guard cell.representedIdentifier == identifier else { return }
                     
                     // Configure the cell with the fetched image.
                     cell.configure(with: fetchedData)
@@ -75,7 +75,7 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
         // Begin asynchronously fetching data for the requested index paths.
         for indexPath in indexPaths {
             let model = models[indexPath.row]
-            asyncFetcher.fetchAsync(model.id)
+            asyncFetcher.fetchAsync(model.identifier)
         }
     }
 
@@ -84,7 +84,7 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
         // Cancel any in-flight requests for data for the specified index paths.
         for indexPath in indexPaths {
             let model = models[indexPath.row]
-            asyncFetcher.cancelFetch(model.id)
+            asyncFetcher.cancelFetch(model.identifier)
         }
     }
 }
