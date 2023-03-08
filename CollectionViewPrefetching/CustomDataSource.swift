@@ -43,10 +43,10 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
         
         // Check if the `asyncFetcher` has already fetched data for the specified identifier.
         if let fetchedData = asyncFetcher.fetchedData(for: identifier) {
-            // The data has already been fetched and cached; use it to configure the cell.
+            // The system has fetched and cached the data; use it to configure the cell.
             cell.configure(with: fetchedData)
         } else {
-            // There is no data available; clear the cell until we've fetched data.
+            // There is no data available; clear the cell until the fetched data arrives.
             cell.configure(with: nil)
 
             // Ask the `asyncFetcher` to fetch data for the specified identifier.
@@ -54,8 +54,7 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
                 DispatchQueue.main.async {
                     /*
                      The `asyncFetcher` has fetched data for the identifier. Before
-                     updating the cell, check if it has been recycled by the
-                     collection view to represent other data.
+                     updating the cell, check whether the collection view has recycled it to represent other data.
                      */
                     guard cell.representedIdentifier == identifier else { return }
                     
