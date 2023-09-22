@@ -3,10 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171115442A5C512400219FB3 /* OperationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171115432A5C512400219FB3 /* OperationStack.swift */; };
+		176975F62ABD09F8007AF5DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176975F52ABD09F8007AF5DF /* AppDelegate.swift */; };
+		176975FB2ABD09F8007AF5DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176975F92ABD09F8007AF5DF /* Main.storyboard */; };
+		176975FD2ABD09F8007AF5DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176975FC2ABD09F8007AF5DF /* Assets.xcassets */; };
+		176976002ABD09F8007AF5DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176975FE2ABD09F8007AF5DF /* LaunchScreen.storyboard */; };
+		1769760A2ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176976092ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSTests.swift */; };
+		176976142ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176976132ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITests.swift */; };
+		176976162ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176976152ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITestsLaunchTests.swift */; };
+		176976202ABD0A32007AF5DF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5377B1D9DBD9200B21855 /* Cell.swift */; };
+		176976212ABD0A32007AF5DF /* CustomDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5377D1D9DBDB700B21855 /* CustomDataSource.swift */; };
+		176976222ABD0A32007AF5DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5376B1D9D878E00B21855 /* ViewController.swift */; };
+		176976232ABD0A37007AF5DF /* AsyncFetcherOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BA4AD31DC80C38001CE247 /* AsyncFetcherOperation.swift */; };
+		176976242ABD0A37007AF5DF /* DisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */; };
+		176976252ABD0A37007AF5DF /* OperationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171115432A5C512400219FB3 /* OperationStack.swift */; };
+		176976262ABD0A37007AF5DF /* AsyncFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5377F1D9DBDD200B21855 /* AsyncFetcher.swift */; };
 		B5533E4D1DC8F9FB0089DFF7 /* DisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */; };
 		B5B5376A1D9D878E00B21855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B537691D9D878E00B21855 /* AppDelegate.swift */; };
 		B5B5376C1D9D878E00B21855 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5376B1D9D878E00B21855 /* ViewController.swift */; };
@@ -19,8 +34,37 @@
 		B5BA4AD41DC80C38001CE247 /* AsyncFetcherOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BA4AD31DC80C38001CE247 /* AsyncFetcherOperation.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		176976062ABD09F9007AF5DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5B5375E1D9D878E00B21855 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 176975F22ABD09F8007AF5DF;
+			remoteInfo = "CollectionViewPrefetching-tvOS";
+		};
+		176976102ABD09F9007AF5DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5B5375E1D9D878E00B21855 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 176975F22ABD09F8007AF5DF;
+			remoteInfo = "CollectionViewPrefetching-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		9CD6593D0EF6812D7174E346 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		171115432A5C512400219FB3 /* OperationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStack.swift; sourceTree = "<group>"; };
+		176975EC2ABCF330007AF5DF /* CollectionViewPrefetching-tvOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CollectionViewPrefetching-tvOS-Info.plist"; path = "/Users/robert.wakefield/Documents/ViacomCBS/Workbench/Development/Experiments/Apple/Prefetching Collection View Data /CollectionViewPrefetching-tvOS-Info.plist"; sourceTree = "<absolute>"; };
+		176975F32ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CollectionViewPrefetching-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		176975F52ABD09F8007AF5DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		176975FA2ABD09F8007AF5DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		176975FC2ABD09F8007AF5DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		176975FF2ABD09F8007AF5DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		176976052ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CollectionViewPrefetching-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		176976092ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPrefetching_tvOSTests.swift; sourceTree = "<group>"; };
+		1769760F2ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CollectionViewPrefetching-tvOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		176976132ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPrefetching_tvOSUITests.swift; sourceTree = "<group>"; };
+		176976152ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPrefetching_tvOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9CD6593D0EF6812D7174E346 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayData.swift; sourceTree = "<group>"; };
 		B5B537661D9D878E00B21855 /* CollectionViewPrefetching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewPrefetching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B537691D9D878E00B21855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,10 +78,31 @@
 		B5B5377F1D9DBDD200B21855 /* AsyncFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncFetcher.swift; sourceTree = "<group>"; };
 		B5BA4AD31DC80C38001CE247 /* AsyncFetcherOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncFetcherOperation.swift; sourceTree = "<group>"; };
 		B5BA4AD51DC814E7001CE247 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BFEB956BAE6FD91AF05F26AF /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		BFEB956BAE6FD91AF05F26AF /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		176975F02ABD09F8007AF5DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		176976022ABD09F9007AF5DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1769760C2ABD09F9007AF5DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5B537631D9D878E00B21855 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,11 +113,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		176975F42ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				176975F52ABD09F8007AF5DF /* AppDelegate.swift */,
+				176975F92ABD09F8007AF5DF /* Main.storyboard */,
+				176975FC2ABD09F8007AF5DF /* Assets.xcassets */,
+				176975FE2ABD09F8007AF5DF /* LaunchScreen.storyboard */,
+			);
+			path = "CollectionViewPrefetching-tvOS";
+			sourceTree = "<group>";
+		};
+		176976082ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				176976092ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSTests.swift */,
+			);
+			path = "CollectionViewPrefetching-tvOSTests";
+			sourceTree = "<group>";
+		};
+		176976122ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				176976132ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITests.swift */,
+				176976152ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITestsLaunchTests.swift */,
+			);
+			path = "CollectionViewPrefetching-tvOSUITests";
+			sourceTree = "<group>";
+		};
 		B5B5375D1D9D878E00B21855 = {
 			isa = PBXGroup;
 			children = (
 				B5BA4AD51DC814E7001CE247 /* README.md */,
 				B5B537681D9D878E00B21855 /* CollectionViewPrefetching */,
+				176975F42ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS */,
+				176976082ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSTests */,
+				176976122ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSUITests */,
 				B5B537671D9D878E00B21855 /* Products */,
 				C1D5BB05807607491E223907 /* Configuration */,
 				BEFC5D36593F10DBA45B5B07 /* LICENSE */,
@@ -63,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				B5B537661D9D878E00B21855 /* CollectionViewPrefetching.app */,
+				176975F32ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS.app */,
+				176976052ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSTests.xctest */,
+				1769760F2ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,15 +169,16 @@
 		B5B537681D9D878E00B21855 /* CollectionViewPrefetching */ = {
 			isa = PBXGroup;
 			children = (
+				176975EC2ABCF330007AF5DF /* CollectionViewPrefetching-tvOS-Info.plist */,
+				B5B537751D9D878E00B21855 /* Info.plist */,
 				B5B537691D9D878E00B21855 /* AppDelegate.swift */,
-				B5B5376B1D9D878E00B21855 /* ViewController.swift */,
-				B5B5377D1D9DBDB700B21855 /* CustomDataSource.swift */,
-				B5B5377B1D9DBD9200B21855 /* Cell.swift */,
-				B5BA4AD21DC80C0B001CE247 /* Async data fetcher */,
-				B5B5376D1D9D878E00B21855 /* Main.storyboard */,
 				B5B537701D9D878E00B21855 /* Assets.xcassets */,
 				B5B537721D9D878E00B21855 /* LaunchScreen.storyboard */,
-				B5B537751D9D878E00B21855 /* Info.plist */,
+				B5B5376D1D9D878E00B21855 /* Main.storyboard */,
+				B5BA4AD21DC80C0B001CE247 /* Async data fetcher */,
+				B5B5377B1D9DBD9200B21855 /* Cell.swift */,
+				B5B5377D1D9DBDB700B21855 /* CustomDataSource.swift */,
+				B5B5376B1D9D878E00B21855 /* ViewController.swift */,
 			);
 			path = CollectionViewPrefetching;
 			sourceTree = "<group>";
@@ -89,6 +189,7 @@
 				B5B5377F1D9DBDD200B21855 /* AsyncFetcher.swift */,
 				B5BA4AD31DC80C38001CE247 /* AsyncFetcherOperation.swift */,
 				B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */,
+				171115432A5C512400219FB3 /* OperationStack.swift */,
 			);
 			name = "Async data fetcher";
 			sourceTree = "<group>";
@@ -98,7 +199,6 @@
 			children = (
 				BFEB956BAE6FD91AF05F26AF /* LICENSE.txt */,
 			);
-			name = LICENSE;
 			path = LICENSE;
 			sourceTree = "<group>";
 		};
@@ -113,6 +213,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		176975F22ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 176976172ABD09F9007AF5DF /* Build configuration list for PBXNativeTarget "CollectionViewPrefetching-tvOS" */;
+			buildPhases = (
+				176975EF2ABD09F8007AF5DF /* Sources */,
+				176975F02ABD09F8007AF5DF /* Frameworks */,
+				176975F12ABD09F8007AF5DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CollectionViewPrefetching-tvOS";
+			productName = "CollectionViewPrefetching-tvOS";
+			productReference = 176975F32ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		176976042ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1769761A2ABD09F9007AF5DF /* Build configuration list for PBXNativeTarget "CollectionViewPrefetching-tvOSTests" */;
+			buildPhases = (
+				176976012ABD09F9007AF5DF /* Sources */,
+				176976022ABD09F9007AF5DF /* Frameworks */,
+				176976032ABD09F9007AF5DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				176976072ABD09F9007AF5DF /* PBXTargetDependency */,
+			);
+			name = "CollectionViewPrefetching-tvOSTests";
+			productName = "CollectionViewPrefetching-tvOSTests";
+			productReference = 176976052ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1769760E2ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1769761D2ABD09F9007AF5DF /* Build configuration list for PBXNativeTarget "CollectionViewPrefetching-tvOSUITests" */;
+			buildPhases = (
+				1769760B2ABD09F9007AF5DF /* Sources */,
+				1769760C2ABD09F9007AF5DF /* Frameworks */,
+				1769760D2ABD09F9007AF5DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				176976112ABD09F9007AF5DF /* PBXTargetDependency */,
+			);
+			name = "CollectionViewPrefetching-tvOSUITests";
+			productName = "CollectionViewPrefetching-tvOSUITests";
+			productReference = 1769760F2ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B5B537651D9D878E00B21855 /* CollectionViewPrefetching */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5B537781D9D878E00B21855 /* Build configuration list for PBXNativeTarget "CollectionViewPrefetching" */;
@@ -136,12 +289,25 @@
 		B5B5375E1D9D878E00B21855 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1140;
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
+					176975F22ABD09F8007AF5DF = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					176976042ABD09F9007AF5DF = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 176975F22ABD09F8007AF5DF;
+					};
+					1769760E2ABD09F9007AF5DF = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 176975F22ABD09F8007AF5DF;
+					};
 					B5B537651D9D878E00B21855 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = TK3588R6YS;
 						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
@@ -161,11 +327,38 @@
 			projectRoot = "";
 			targets = (
 				B5B537651D9D878E00B21855 /* CollectionViewPrefetching */,
+				176975F22ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS */,
+				176976042ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSTests */,
+				1769760E2ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		176975F12ABD09F8007AF5DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				176976002ABD09F8007AF5DF /* LaunchScreen.storyboard in Resources */,
+				176975FD2ABD09F8007AF5DF /* Assets.xcassets in Resources */,
+				176975FB2ABD09F8007AF5DF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		176976032ABD09F9007AF5DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1769760D2ABD09F9007AF5DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5B537641D9D878E00B21855 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,11 +372,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		176975EF2ABD09F8007AF5DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				176976232ABD0A37007AF5DF /* AsyncFetcherOperation.swift in Sources */,
+				176976222ABD0A32007AF5DF /* ViewController.swift in Sources */,
+				176975F62ABD09F8007AF5DF /* AppDelegate.swift in Sources */,
+				176976262ABD0A37007AF5DF /* AsyncFetcher.swift in Sources */,
+				176976202ABD0A32007AF5DF /* Cell.swift in Sources */,
+				176976242ABD0A37007AF5DF /* DisplayData.swift in Sources */,
+				176976252ABD0A37007AF5DF /* OperationStack.swift in Sources */,
+				176976212ABD0A32007AF5DF /* CustomDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		176976012ABD09F9007AF5DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1769760A2ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1769760B2ABD09F9007AF5DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				176976142ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITests.swift in Sources */,
+				176976162ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5B537621D9D878E00B21855 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B5B5376C1D9D878E00B21855 /* ViewController.swift in Sources */,
+				171115442A5C512400219FB3 /* OperationStack.swift in Sources */,
 				B5B5376A1D9D878E00B21855 /* AppDelegate.swift in Sources */,
 				B5B5377E1D9DBDB700B21855 /* CustomDataSource.swift in Sources */,
 				B5B5377C1D9DBD9200B21855 /* Cell.swift in Sources */,
@@ -195,7 +421,36 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		176976072ABD09F9007AF5DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 176975F22ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS */;
+			targetProxy = 176976062ABD09F9007AF5DF /* PBXContainerItemProxy */;
+		};
+		176976112ABD09F9007AF5DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 176975F22ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS */;
+			targetProxy = 176976102ABD09F9007AF5DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		176975F92ABD09F8007AF5DF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				176975FA2ABD09F8007AF5DF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		176975FE2ABD09F8007AF5DF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				176975FF2ABD09F8007AF5DF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		B5B5376D1D9D878E00B21855 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -215,6 +470,181 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		176976182ABD09F9007AF5DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8J2UZ42BMU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.pluto.CollectionViewPrefetching;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Debug;
+		};
+		176976192ABD09F9007AF5DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8J2UZ42BMU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = tv.pluto.CollectionViewPrefetching;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Release;
+		};
+		1769761B2ABD09F9007AF5DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8J2UZ42BMU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.pluto.CollectionViewPrefetching-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CollectionViewPrefetching-tvOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CollectionViewPrefetching-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Debug;
+		};
+		1769761C2ABD09F9007AF5DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8J2UZ42BMU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.pluto.CollectionViewPrefetching-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CollectionViewPrefetching-tvOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CollectionViewPrefetching-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Release;
+		};
+		1769761E2ABD09F9007AF5DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8J2UZ42BMU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.pluto.CollectionViewPrefetching-tvOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "CollectionViewPrefetching-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Debug;
+		};
+		1769761F2ABD09F9007AF5DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8J2UZ42BMU;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.pluto.CollectionViewPrefetching-tvOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "CollectionViewPrefetching-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Release;
+		};
 		B5B537761D9D878E00B21855 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9CD6593D0EF6812D7174E346 /* SampleCode.xcconfig */;
@@ -241,6 +671,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -266,7 +697,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -301,6 +732,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -320,10 +752,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -333,14 +766,22 @@
 			baseConfigurationReference = 9CD6593D0EF6812D7174E346 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TK3588R6YS;
 				INFOPLIST_FILE = CollectionViewPrefetching/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.CollectionViewPrefetching${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -349,20 +790,55 @@
 			baseConfigurationReference = 9CD6593D0EF6812D7174E346 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TK3588R6YS;
 				INFOPLIST_FILE = CollectionViewPrefetching/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.CollectionViewPrefetching${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		176976172ABD09F9007AF5DF /* Build configuration list for PBXNativeTarget "CollectionViewPrefetching-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				176976182ABD09F9007AF5DF /* Debug */,
+				176976192ABD09F9007AF5DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1769761A2ABD09F9007AF5DF /* Build configuration list for PBXNativeTarget "CollectionViewPrefetching-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1769761B2ABD09F9007AF5DF /* Debug */,
+				1769761C2ABD09F9007AF5DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1769761D2ABD09F9007AF5DF /* Build configuration list for PBXNativeTarget "CollectionViewPrefetching-tvOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1769761E2ABD09F9007AF5DF /* Debug */,
+				1769761F2ABD09F9007AF5DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B5B537611D9D878E00B21855 /* Build configuration list for PBXProject "CollectionViewPrefetching" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

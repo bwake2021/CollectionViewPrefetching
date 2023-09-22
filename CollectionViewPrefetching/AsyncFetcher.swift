@@ -7,29 +7,82 @@ A class that used to mimic fetching data asynchronously.
 
 import Foundation
 
+final class CarouselPageId : NSObject {
+
+    static var pageSize = 8
+
+    let pageIndex: Int
+    let carouselId: String
+
+    init(tileIndex: Int, carouselId: String) {
+        self.pageIndex = tileIndex / Self.pageSize
+        self.carouselId = carouselId
+    }
+
+    init(indexPath: IndexPath, carouselId: String) {
+        self.pageIndex = indexPath.item / Self.pageSize
+        self.carouselId = carouselId
+    }
+
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? CarouselPageId else {
+            return false
+        }
+        return pageIndex == other.pageIndex && carouselId == other.carouselId
+    }
+
+    override var hash: Int {
+        return pageIndex.hashValue ^ carouselId.hashValue
+    }
+
+    override var description: String { "ID:\(carouselId) pageIndex:\(pageIndex)" }
+}
+
 /// - Tag: AsyncFetcher
 class AsyncFetcher {
     // MARK: Types
 
     /// A serial `OperationQueue` to lock access to the `fetchQueue` and `completionHandlers` properties.
-    private let serialAccessQueue = OperationQueue()
+    private let serialAccessQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
 
     /// An `OperationQueue` that contains `AsyncFetcherOperation`s for requested data.
-    private let fetchQueue = OperationQueue()
+    private lazy var fetchQueue = OperationQueue()
 
     /// A dictionary of arrays of closures to call when an object has been fetched for an id.
-    private var completionHandlers = [UUID: [(DisplayData?) -> Void]]()
+    private var completionHandlers = [CarouselPageId: [(DisplayData?) -> Void]]()
 
     /// An `NSCache` used to store fetched objects.
-    private var cache = NSCache<NSUUID, DisplayData>()
+    private var cache = NSCache<CarouselPageId, DisplayData>()
 
     // MARK: Initialization
 
-    init() {
-        serialAccessQueue.maxConcurrentOperationCount = 1
-    }
+    init() {}
 
     // MARK: Object fetching
+
+    func fetch(_ identifier: String, for indexPath: IndexPath, completion: ((DisplayData?) -> Void)? = nil) {
+
+        let pageIdentifier = CarouselPageId(indexPath: indexPath, carouselId: identifier)
+        if let fetchedData = self.fetchedData(for: pageIdentifier, and: indexPath) {
+
+            // The system has fetched and cached the data; use it to configure the cell.
+            completion?(fetchedData)
+
+        } else {
+
+            // There is no data available yet; clear the cell until the fetched data arrives.
+            completion?(nil)
+
+            // Ask the `asyncFetcher` to fetch data for the specified identifier.
+            self.fetchAsync(identifier, indexPath) { fetchedData in
+                completion?(fetchedData)
+            }
+        }
+    }
 
     /**
      Asynchronously fetches data for a specified `UUID`.
@@ -38,16 +91,17 @@ class AsyncFetcher {
          - identifier: The `UUID` to fetch data for.
          - completion: An optional called when the data has been fetched.
     */
-    func fetchAsync(_ identifier: UUID, completion: ((DisplayData?) -> Void)? = nil) {
+    private func fetchAsync(_ identifier: String, _ indexPath: IndexPath, completion: ((DisplayData?) -> Void)? = nil) {
         // Use the serial queue while we access the fetch queue and completion handlers.
         serialAccessQueue.addOperation {
             // If a completion block has been provided, store it.
+            let carouselPageId = CarouselPageId(indexPath: indexPath, carouselId: identifier)
             if let completion = completion {
-                let handlers = self.completionHandlers[identifier, default: []]
-                self.completionHandlers[identifier] = handlers + [completion]
+                let handlers = self.completionHandlers[carouselPageId, default: []]
+                self.completionHandlers[carouselPageId] = handlers + [completion]
             }
             
-            self.fetchData(for: identifier)
+            self.fetchData(for: carouselPageId, indexPath)
         }
     }
 
@@ -55,10 +109,11 @@ class AsyncFetcher {
      Returns the previously fetched data for a specified `UUID`.
      
      - Parameter identifier: The `UUID` of the object to return.
+     - Parameter indexPath: The particular cell for the UUID
      - Returns: The 'DisplayData' that has previously been fetched or nil.
      */
-    func fetchedData(for identifier: UUID) -> DisplayData? {
-        return cache.object(forKey: identifier as NSUUID)
+    private func fetchedData(for identifier: CarouselPageId, and indexPath: IndexPath) -> DisplayData? {
+        return cache.object(forKey: identifier)
     }
 
     /**
@@ -67,15 +122,17 @@ class AsyncFetcher {
      
      - Parameter identifier: The `UUID` to cancel fetches for.
      */
-    func cancelFetch(_ identifier: UUID) {
+    func cancelFetch(_ identifier: String, _ item: Int) {
         serialAccessQueue.addOperation {
+            let carouselPageId = CarouselPageId(tileIndex: item, carouselId: identifier)
+
             self.fetchQueue.isSuspended = true
             defer {
                 self.fetchQueue.isSuspended = false
             }
 
-            self.operation(for: identifier)?.cancel()
-            self.completionHandlers[identifier] = nil
+            self.operation(for: carouselPageId)?.cancel()
+            self.completionHandlers[carouselPageId] = nil
         }
     }
 
@@ -87,11 +144,13 @@ class AsyncFetcher {
      
      - Parameter identifier: The `UUID` to fetch data for.
      */
-    private func fetchData(for identifier: UUID) {
+    private func fetchData(for identifier: CarouselPageId, _ indexPath: IndexPath) {
         // If a request has already been made for the object, do nothing more.
-        guard operation(for: identifier) == nil else { return }
+        if nil != operation(for: identifier) {
+            return
+        }
         
-        if let data = fetchedData(for: identifier) {
+        if let data = fetchedData(for: identifier, and: indexPath) {
             // The object has already been cached; call the completion handler with that object.
             invokeCompletionHandlers(for: identifier, with: data)
         } else {
@@ -101,7 +160,7 @@ class AsyncFetcher {
             // Set the operation's completion block to cache the fetched object and call the associated completion blocks.
             operation.completionBlock = { [weak operation] in
                 guard let fetchedData = operation?.fetchedData else { return }
-                self.cache.setObject(fetchedData, forKey: identifier as NSUUID)
+                self.cache.setObject(fetchedData, forKey: identifier)
                 
                 self.serialAccessQueue.addOperation {
                     self.invokeCompletionHandlers(for: identifier, with: fetchedData)
@@ -113,14 +172,14 @@ class AsyncFetcher {
     }
 
     /**
-     Returns any enqueued `ObjectFetcherOperation` for a specified `UUID`.
+     Returns any enqueued `ObjectFetcherOperation` for a specified `CarouselPageId`.
      
-     - Parameter identifier: The `UUID` of the operation to return.
+     - Parameter identifier: The `CarouselPageId` of the operation to return.
      - Returns: The enqueued `ObjectFetcherOperation` or nil.
      */
-    private func operation(for identifier: UUID) -> AsyncFetcherOperation? {
+    private func operation(for carouselPageId: CarouselPageId) -> AsyncFetcherOperation? {
         for case let fetchOperation as AsyncFetcherOperation in fetchQueue.operations
-            where !fetchOperation.isCancelled && fetchOperation.identifier == identifier {
+            where !fetchOperation.isCancelled && fetchOperation.carouselPageId == carouselPageId {
             return fetchOperation
         }
         
@@ -128,14 +187,14 @@ class AsyncFetcher {
     }
 
     /**
-     Invokes any completion handlers for a specified `UUID`. Once called,
-     the stored array of completion handlers for the `UUID` is cleared.
+     Invokes any completion handlers for a specified `CarouselPageId`. Once called,
+     the stored array of completion handlers for the `CarouselPageId` is cleared.
      
      - Parameters:
-     - identifier: The `UUID` of the completion handlers to call.
+     - identifier: The `CarouselPageId` of the completion handlers to call.
      - object: The fetched object to pass when calling a completion handler.
      */
-    private func invokeCompletionHandlers(for identifier: UUID, with fetchedData: DisplayData) {
+    private func invokeCompletionHandlers(for identifier: CarouselPageId, with fetchedData: DisplayData) {
         let completionHandlers = self.completionHandlers[identifier, default: []]
         self.completionHandlers[identifier] = nil
 

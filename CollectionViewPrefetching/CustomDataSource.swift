@@ -7,10 +7,15 @@ A class that implements both `UICollectionViewDataSource` and `UICollectionViewD
 
 import UIKit
 
+struct CarouselTileId: Hashable, Equatable {
+    let carouselId: String
+    let tileIndex: Int
+}
+
 /// - Tag: CustomDataSource
 class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
     // MARK: Properties
-    
+
     struct Model {
         var identifier = UUID()
         
@@ -28,39 +33,33 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
     // MARK: UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return models.count
+        return 32
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        models.count
     }
 
     /// - Tag: CellForItemAt
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.reuseIdentifier, for: indexPath) as? Cell else {
-            fatalError("Expected `\(Cell.self)` type for reuseIdentifier \(Cell.reuseIdentifier). Check the configuration in Main.storyboard.")
-        }
-        
-        let model = models[indexPath.row]
-        let identifier = model.identifier
-        cell.representedIdentifier = identifier
-        
-        // Check if the `asyncFetcher` has already fetched data for the specified identifier.
-        if let fetchedData = asyncFetcher.fetchedData(for: identifier) {
-            // The system has fetched and cached the data; use it to configure the cell.
-            cell.configure(with: fetchedData)
-        } else {
-            // There is no data available; clear the cell until the fetched data arrives.
-            cell.configure(with: nil)
 
-            // Ask the `asyncFetcher` to fetch data for the specified identifier.
-            asyncFetcher.fetchAsync(identifier) { fetchedData in
-                DispatchQueue.main.async {
-                    /*
-                     The `asyncFetcher` has fetched data for the identifier. Before
-                     updating the cell, check whether the collection view has recycled it to represent other data.
-                     */
-                    guard cell.representedIdentifier == identifier else { return }
-                    
-                    // Configure the cell with the fetched image.
-                    cell.configure(with: fetchedData)
-                }
+        let cell = Cell.dequeueReusableCell(from: collectionView, for: indexPath)
+
+        let model = models[indexPath.section]
+        let identifier = model.identifier.uuidString
+        let carouselTileId = CarouselTileId(carouselId: identifier, tileIndex: indexPath.item)
+        cell.representedIdentifier = carouselTileId
+
+        asyncFetcher.fetch(identifier, for: indexPath) { fetchedData in
+            DispatchQueue.main.async {
+                /*
+                 The `asyncFetcher` has fetched data for the identifier. Before
+                 updating the cell, check whether the collection view has recycled it to represent other data.
+                 */
+                guard cell.representedIdentifier == carouselTileId else { return }
+
+                // Configure the cell with the fetched image.
+                cell.configure(for: indexPath, with: fetchedData)
             }
         }
 
@@ -73,8 +72,8 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         // Begin asynchronously fetching data for the requested index paths.
         for indexPath in indexPaths {
-            let model = models[indexPath.row]
-            asyncFetcher.fetchAsync(model.identifier)
+            let model = models[indexPath.item]
+            asyncFetcher.fetch(model.identifier.uuidString, for: indexPath)
         }
     }
 
@@ -82,8 +81,8 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
         // Cancel any in-flight requests for data for the specified index paths.
         for indexPath in indexPaths {
-            let model = models[indexPath.row]
-            asyncFetcher.cancelFetch(model.identifier)
+            let model = models[indexPath.item]
+            asyncFetcher.cancelFetch(model.identifier.uuidString, indexPath.item)
         }
     }
 }

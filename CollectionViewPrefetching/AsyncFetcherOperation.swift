@@ -11,15 +11,18 @@ class AsyncFetcherOperation: Operation {
     // MARK: Properties
 
     /// The `UUID` that the operation is fetching data for.
-    let identifier: UUID
+    let carouselPageId: CarouselPageId
+    let startTimeStamp = Date()
 
     /// The `DisplayData` that has been fetched by this operation.
     private(set) var fetchedData: DisplayData?
 
     // MARK: Initialization
 
-    init(identifier: UUID) {
-        self.identifier = identifier
+    init(identifier: CarouselPageId) {
+        self.carouselPageId = identifier
+
+        super.init()
     }
 
     // MARK: Operation overrides
@@ -29,6 +32,10 @@ class AsyncFetcherOperation: Operation {
         Thread.sleep(until: Date().addingTimeInterval(1))
         guard !isCancelled else { return }
         
-        fetchedData = DisplayData()
+        fetchedData = DisplayData(self.carouselPageId, self.startTimeStamp, Date())
+        
+        debugPrint("data for \(carouselPageId) fetched!")
     }
+
+    override var description: String { "fetch: \(carouselPageId.description)" }
 }
