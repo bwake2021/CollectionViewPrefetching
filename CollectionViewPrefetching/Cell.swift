@@ -27,8 +27,8 @@ final class Cell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        layer.borderWidth = 1.0
-        layer.borderColor = UIColor.red.cgColor
+        layer.borderWidth = 8.0
+        layer.borderColor = UIColor.clear.cgColor
         
     }
     
@@ -41,8 +41,14 @@ final class Cell: UICollectionViewCell {
         endTimeStamp?.text = nil
         representedIdentifier = nil
         backgroundColor = .clear
+        layer.borderColor = UIColor.clear.cgColor
     }
 
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        super.didUpdateFocus(in: context, with: coordinator)
+
+        layer.borderColor = self.isFocused ? UIColor.systemYellow.cgColor : UIColor.white.cgColor
+    }
 
     // MARK: Convenience
 
@@ -56,7 +62,8 @@ final class Cell: UICollectionViewCell {
      */
     func configure(for indexPath: IndexPath, with data: DisplayData?) {
         backgroundColor = data?.color ?? .systemRed
-        
+        layer.borderColor = self.isFocused ? UIColor.systemYellow.cgColor : UIColor.white.cgColor
+
         section?.text = "\(indexPath.section)"
         item?.text = "\(indexPath.item)"
         carouselId?.text = data?.carouselPageID.carouselId
