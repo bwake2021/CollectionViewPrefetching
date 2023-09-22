@@ -53,7 +53,7 @@
 
 /* Begin PBXFileReference section */
 		171115432A5C512400219FB3 /* OperationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStack.swift; sourceTree = "<group>"; };
-		176975EC2ABCF330007AF5DF /* CollectionViewPrefetching-tvOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CollectionViewPrefetching-tvOS-Info.plist"; path = "/Users/robert.wakefield/Documents/ViacomCBS/Workbench/Development/Experiments/Apple/Prefetching Collection View Data /CollectionViewPrefetching-tvOS-Info.plist"; sourceTree = "<absolute>"; };
+		176975EC2ABCF330007AF5DF /* CollectionViewPrefetching-tvOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollectionViewPrefetching-tvOS-Info.plist"; sourceTree = "<group>"; };
 		176975F32ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CollectionViewPrefetching-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		176975F52ABD09F8007AF5DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		176975FA2ABD09F8007AF5DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 		176975F42ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				176975EC2ABCF330007AF5DF /* CollectionViewPrefetching-tvOS-Info.plist */,
 				176975F52ABD09F8007AF5DF /* AppDelegate.swift */,
 				176975F92ABD09F8007AF5DF /* Main.storyboard */,
 				176975FC2ABD09F8007AF5DF /* Assets.xcassets */,
@@ -169,7 +170,6 @@
 		B5B537681D9D878E00B21855 /* CollectionViewPrefetching */ = {
 			isa = PBXGroup;
 			children = (
-				176975EC2ABCF330007AF5DF /* CollectionViewPrefetching-tvOS-Info.plist */,
 				B5B537751D9D878E00B21855 /* Info.plist */,
 				B5B537691D9D878E00B21855 /* AppDelegate.swift */,
 				B5B537701D9D878E00B21855 /* Assets.xcassets */,
