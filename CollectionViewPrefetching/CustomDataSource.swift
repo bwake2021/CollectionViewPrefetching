@@ -7,11 +7,6 @@ A class that implements both `UICollectionViewDataSource` and `UICollectionViewD
 
 import UIKit
 
-struct CarouselTileId: Hashable, Equatable {
-    let carouselId: String
-    let tileIndex: Int
-}
-
 /// - Tag: CustomDataSource
 class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
     // MARK: Properties
@@ -47,10 +42,10 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
 
         let model = models[indexPath.section]
         let identifier = model.identifier.uuidString
-        let carouselTileId = CarouselTileId(carouselId: identifier, tileIndex: indexPath.item)
+        let carouselTileId = CarouselTileId(tileIndex: indexPath.item, carouselId: identifier)
         cell.representedIdentifier = carouselTileId
 
-        asyncFetcher.fetch(identifier, for: indexPath) { fetchedData in
+        asyncFetcher.fetch(carouselTileId) { fetchedData in
             DispatchQueue.main.async {
                 /*
                  The `asyncFetcher` has fetched data for the identifier. Before
@@ -73,7 +68,7 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
         // Begin asynchronously fetching data for the requested index paths.
         for indexPath in indexPaths {
             let model = models[indexPath.item]
-            asyncFetcher.fetch(model.identifier.uuidString, for: indexPath)
+            asyncFetcher.fetch(CarouselTileId(indexPath: indexPath, carouselId: model.identifier.uuidString))
         }
     }
 

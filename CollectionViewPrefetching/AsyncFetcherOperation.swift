@@ -15,12 +15,12 @@ class AsyncFetcherOperation: Operation {
     let startTimeStamp = Date()
 
     /// The `DisplayData` that has been fetched by this operation.
-    private(set) var fetchedData: DisplayData?
+    private(set) var fetchedData: [DisplayData] = []
 
     // MARK: Initialization
 
-    init(identifier: CarouselPageId) {
-        self.carouselPageId = identifier
+    init(carouselPageId: CarouselPageId) {
+        self.carouselPageId = carouselPageId
 
         super.init()
     }
@@ -31,8 +31,10 @@ class AsyncFetcherOperation: Operation {
         // Wait for a second to mimic a slow operation.
         Thread.sleep(until: Date().addingTimeInterval(1))
         guard !isCancelled else { return }
-        
-        fetchedData = DisplayData(self.carouselPageId, self.startTimeStamp, Date())
+
+        for index in carouselPageId.offset ..< carouselPageId.end {
+            fetchedData.append(DisplayData(self.carouselPageId, self.startTimeStamp, Date(), index))
+        }
         
         debugPrint("data for \(carouselPageId) fetched!")
     }

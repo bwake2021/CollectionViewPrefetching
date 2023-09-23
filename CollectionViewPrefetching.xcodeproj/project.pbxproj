@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		171115442A5C512400219FB3 /* OperationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171115432A5C512400219FB3 /* OperationStack.swift */; };
 		176975F62ABD09F8007AF5DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176975F52ABD09F8007AF5DF /* AppDelegate.swift */; };
 		176975FB2ABD09F8007AF5DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176975F92ABD09F8007AF5DF /* Main.storyboard */; };
 		176975FD2ABD09F8007AF5DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176975FC2ABD09F8007AF5DF /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		176976222ABD0A32007AF5DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5376B1D9D878E00B21855 /* ViewController.swift */; };
 		176976232ABD0A37007AF5DF /* AsyncFetcherOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BA4AD31DC80C38001CE247 /* AsyncFetcherOperation.swift */; };
 		176976242ABD0A37007AF5DF /* DisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */; };
-		176976252ABD0A37007AF5DF /* OperationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171115432A5C512400219FB3 /* OperationStack.swift */; };
 		176976262ABD0A37007AF5DF /* AsyncFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5377F1D9DBDD200B21855 /* AsyncFetcher.swift */; };
 		B5533E4D1DC8F9FB0089DFF7 /* DisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */; };
 		B5B5376A1D9D878E00B21855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B537691D9D878E00B21855 /* AppDelegate.swift */; };
@@ -52,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		171115432A5C512400219FB3 /* OperationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStack.swift; sourceTree = "<group>"; };
 		176975EC2ABCF330007AF5DF /* CollectionViewPrefetching-tvOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollectionViewPrefetching-tvOS-Info.plist"; sourceTree = "<group>"; };
 		176975F32ABD09F8007AF5DF /* CollectionViewPrefetching-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CollectionViewPrefetching-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		176975F52ABD09F8007AF5DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,7 +186,6 @@
 				B5B5377F1D9DBDD200B21855 /* AsyncFetcher.swift */,
 				B5BA4AD31DC80C38001CE247 /* AsyncFetcherOperation.swift */,
 				B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */,
-				171115432A5C512400219FB3 /* OperationStack.swift */,
 			);
 			name = "Async data fetcher";
 			sourceTree = "<group>";
@@ -382,7 +378,6 @@
 				176976262ABD0A37007AF5DF /* AsyncFetcher.swift in Sources */,
 				176976202ABD0A32007AF5DF /* Cell.swift in Sources */,
 				176976242ABD0A37007AF5DF /* DisplayData.swift in Sources */,
-				176976252ABD0A37007AF5DF /* OperationStack.swift in Sources */,
 				176976212ABD0A32007AF5DF /* CustomDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +404,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B5376C1D9D878E00B21855 /* ViewController.swift in Sources */,
-				171115442A5C512400219FB3 /* OperationStack.swift in Sources */,
 				B5B5376A1D9D878E00B21855 /* AppDelegate.swift in Sources */,
 				B5B5377E1D9DBDB700B21855 /* CustomDataSource.swift in Sources */,
 				B5B5377C1D9DBD9200B21855 /* Cell.swift in Sources */,

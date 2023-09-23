@@ -10,27 +10,19 @@ import UIKit
 /// A type to represent how model data should be displayed.
 class DisplayData: NSObject {
     
-    private static var serialAccessQueue = {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
-        return queue
-    }()
-    
     var color: UIColor = .systemGreen
     
     // Add additional properties for your own configuration here.
     let carouselPageID: CarouselPageId
+    let tileIndex: Int
     let startTimeStamp: Date
     let endTimeStamp: Date
 
-    var isPlaceholder: Bool { endTimeStamp < startTimeStamp }
-    
-    init(_ carousePageID: CarouselPageId, _ startTimeStamp: Date, _ endTimeStamp: Date) {
+    init(_ carousePageID: CarouselPageId, _ startTimeStamp: Date, _ endTimeStamp: Date, _ tileIndex: Int) {
 
         self.carouselPageID = carousePageID
         self.startTimeStamp = startTimeStamp
         self.endTimeStamp = endTimeStamp
+        self.tileIndex = tileIndex
     }
-
-    static let placeholder = DisplayData(CarouselPageId(tileIndex: -1, carouselId: ""), .distantFuture, .distantPast)
 }

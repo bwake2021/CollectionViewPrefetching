@@ -16,10 +16,11 @@ final class Cell: UICollectionViewCell {
     @IBOutlet weak var section: UILabel?
     @IBOutlet weak var item: UILabel?
     @IBOutlet weak var carouselId: UILabel?
-    @IBOutlet weak var startTimeStamp: UILabel!
-    @IBOutlet weak var endTimeStamp: UILabel!
+    @IBOutlet weak var tileIndex: UILabel?
+    @IBOutlet weak var startTimeStamp: UILabel?
+    @IBOutlet weak var endTimeStamp: UILabel?
 
-    /// The `UUID` for the data this cell is presenting.
+    /// The `CarouselItemId` for the data this cell presents.
     var representedIdentifier: CarouselTileId?
 
     // MARK: UICollectionViewCell
@@ -27,9 +28,10 @@ final class Cell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        #if os(tvOS)
         layer.borderWidth = 8.0
         layer.borderColor = UIColor.clear.cgColor
-        
+        #endif
     }
     
     override func prepareForReuse() {
@@ -37,6 +39,7 @@ final class Cell: UICollectionViewCell {
         section?.text = nil
         item?.text = nil
         carouselId?.text = nil
+        tileIndex?.text = nil
         startTimeStamp?.text = nil
         endTimeStamp?.text = nil
         representedIdentifier = nil
@@ -66,13 +69,17 @@ final class Cell: UICollectionViewCell {
 
         section?.text = "\(indexPath.section)"
         item?.text = "\(indexPath.item)"
-        carouselId?.text = data?.carouselPageID.carouselId
-        if let data {
-            startTimeStamp?.text = Self.formatter.string(from: data.startTimeStamp)
-            endTimeStamp?.text = Self.formatter.string(from: data.endTimeStamp)
-        } else {
+
+        guard let data else {
             endTimeStamp?.text = "nil Data!"
+            return
         }
+
+        carouselId?.text = data.carouselPageID.carouselId
+        tileIndex?.text = "\(data.tileIndex)"
+
+        startTimeStamp?.text = Self.formatter.string(from: data.startTimeStamp)
+        endTimeStamp?.text = Self.formatter.string(from: data.endTimeStamp)
     }
 }
 
