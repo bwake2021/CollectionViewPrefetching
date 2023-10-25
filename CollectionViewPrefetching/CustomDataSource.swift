@@ -38,8 +38,18 @@ class CustomDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDa
     /// - Tag: CellForItemAt
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = Cell.dequeueReusableCell(from: collectionView, for: indexPath)
+        var cell: UICollectionViewCell & Configurable
+        if indexPath.section == 0 {
 
+            cell = HeroCell.dequeueReusableCell(from: collectionView, for: indexPath)
+
+        } else {
+            
+            cell = Cell.dequeueReusableCell(from: collectionView, for: indexPath)
+        }
+
+        cell.alpha = 1.0
+        cell.totalTiles?.text = "\(collectionView.numberOfItems(inSection: indexPath.section))"
         let model = models[indexPath.section]
         let identifier = model.identifier.uuidString
         let carouselTileId = CarouselTileId(tileIndex: indexPath.item, carouselId: identifier)

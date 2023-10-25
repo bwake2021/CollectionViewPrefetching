@@ -7,7 +7,7 @@ The `UICollectionViewCell` used to represent data in the collection view.
 
 import UIKit
 
-final class Cell: UICollectionViewCell, Configurable {
+final class HeroCell: UICollectionViewCell, Configurable {
     
     static let formatter = ISO8601DateFormatter()
     

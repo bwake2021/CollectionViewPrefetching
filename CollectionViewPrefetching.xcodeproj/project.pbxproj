@@ -16,13 +16,21 @@
 		176976162ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176976152ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITestsLaunchTests.swift */; };
 		176976202ABD0A32007AF5DF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5377B1D9DBD9200B21855 /* Cell.swift */; };
 		176976212ABD0A32007AF5DF /* CustomDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5377D1D9DBDB700B21855 /* CustomDataSource.swift */; };
-		176976222ABD0A32007AF5DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5376B1D9D878E00B21855 /* ViewController.swift */; };
+		176976222ABD0A32007AF5DF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5376B1D9D878E00B21855 /* CollectionViewController.swift */; };
 		176976232ABD0A37007AF5DF /* AsyncFetcherOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BA4AD31DC80C38001CE247 /* AsyncFetcherOperation.swift */; };
 		176976242ABD0A37007AF5DF /* DisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */; };
 		176976262ABD0A37007AF5DF /* AsyncFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5377F1D9DBDD200B21855 /* AsyncFetcher.swift */; };
+		178FE71E2ADDE0BE00B93265 /* UICollectionViewCell+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178FE71D2ADDE0BE00B93265 /* UICollectionViewCell+reuseIdentifier.swift */; };
+		178FE7202ADDE0E400B93265 /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178FE71F2ADDE0E400B93265 /* HeroCell.swift */; };
+		178FE7222ADDE1F700B93265 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178FE7212ADDE1F700B93265 /* Configurable.swift */; };
+		178FE7232ADDE28A00B93265 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178FE7212ADDE1F700B93265 /* Configurable.swift */; };
+		178FE7242ADDE28F00B93265 /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178FE71F2ADDE0E400B93265 /* HeroCell.swift */; };
+		178FE7252ADDE29400B93265 /* UICollectionViewCell+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178FE71D2ADDE0BE00B93265 /* UICollectionViewCell+reuseIdentifier.swift */; };
+		17C656732AD9997D00B790DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C656722AD9997D00B790DD /* ViewController.swift */; };
+		17C656742AD999DA00B790DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C656722AD9997D00B790DD /* ViewController.swift */; };
 		B5533E4D1DC8F9FB0089DFF7 /* DisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */; };
 		B5B5376A1D9D878E00B21855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B537691D9D878E00B21855 /* AppDelegate.swift */; };
-		B5B5376C1D9D878E00B21855 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5376B1D9D878E00B21855 /* ViewController.swift */; };
+		B5B5376C1D9D878E00B21855 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5376B1D9D878E00B21855 /* CollectionViewController.swift */; };
 		B5B5376F1D9D878E00B21855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B5376D1D9D878E00B21855 /* Main.storyboard */; };
 		B5B537711D9D878E00B21855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B537701D9D878E00B21855 /* Assets.xcassets */; };
 		B5B537741D9D878E00B21855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B537721D9D878E00B21855 /* LaunchScreen.storyboard */; };
@@ -61,11 +69,15 @@
 		1769760F2ABD09F9007AF5DF /* CollectionViewPrefetching-tvOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CollectionViewPrefetching-tvOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		176976132ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPrefetching_tvOSUITests.swift; sourceTree = "<group>"; };
 		176976152ABD09F9007AF5DF /* CollectionViewPrefetching_tvOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewPrefetching_tvOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		178FE71D2ADDE0BE00B93265 /* UICollectionViewCell+reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+reuseIdentifier.swift"; sourceTree = "<group>"; };
+		178FE71F2ADDE0E400B93265 /* HeroCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
+		178FE7212ADDE1F700B93265 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		17C656722AD9997D00B790DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CD6593D0EF6812D7174E346 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		B5533E4C1DC8F9FB0089DFF7 /* DisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayData.swift; sourceTree = "<group>"; };
 		B5B537661D9D878E00B21855 /* CollectionViewPrefetching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewPrefetching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B537691D9D878E00B21855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5B5376B1D9D878E00B21855 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5B5376B1D9D878E00B21855 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B5B5376E1D9D878E00B21855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5B537701D9D878E00B21855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5B537731D9D878E00B21855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -173,9 +185,13 @@
 				B5B537721D9D878E00B21855 /* LaunchScreen.storyboard */,
 				B5B5376D1D9D878E00B21855 /* Main.storyboard */,
 				B5BA4AD21DC80C0B001CE247 /* Async data fetcher */,
+				178FE7212ADDE1F700B93265 /* Configurable.swift */,
 				B5B5377B1D9DBD9200B21855 /* Cell.swift */,
+				178FE71F2ADDE0E400B93265 /* HeroCell.swift */,
+				178FE71D2ADDE0BE00B93265 /* UICollectionViewCell+reuseIdentifier.swift */,
 				B5B5377D1D9DBDB700B21855 /* CustomDataSource.swift */,
-				B5B5376B1D9D878E00B21855 /* ViewController.swift */,
+				B5B5376B1D9D878E00B21855 /* CollectionViewController.swift */,
+				17C656722AD9997D00B790DD /* ViewController.swift */,
 			);
 			path = CollectionViewPrefetching;
 			sourceTree = "<group>";
@@ -373,11 +389,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				176976232ABD0A37007AF5DF /* AsyncFetcherOperation.swift in Sources */,
-				176976222ABD0A32007AF5DF /* ViewController.swift in Sources */,
+				176976222ABD0A32007AF5DF /* CollectionViewController.swift in Sources */,
 				176975F62ABD09F8007AF5DF /* AppDelegate.swift in Sources */,
 				176976262ABD0A37007AF5DF /* AsyncFetcher.swift in Sources */,
 				176976202ABD0A32007AF5DF /* Cell.swift in Sources */,
+				178FE7252ADDE29400B93265 /* UICollectionViewCell+reuseIdentifier.swift in Sources */,
+				178FE7242ADDE28F00B93265 /* HeroCell.swift in Sources */,
 				176976242ABD0A37007AF5DF /* DisplayData.swift in Sources */,
+				178FE7232ADDE28A00B93265 /* Configurable.swift in Sources */,
+				17C656742AD999DA00B790DD /* ViewController.swift in Sources */,
 				176976212ABD0A32007AF5DF /* CustomDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,12 +423,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5B5376C1D9D878E00B21855 /* ViewController.swift in Sources */,
+				178FE71E2ADDE0BE00B93265 /* UICollectionViewCell+reuseIdentifier.swift in Sources */,
+				B5B5376C1D9D878E00B21855 /* CollectionViewController.swift in Sources */,
 				B5B5376A1D9D878E00B21855 /* AppDelegate.swift in Sources */,
 				B5B5377E1D9DBDB700B21855 /* CustomDataSource.swift in Sources */,
 				B5B5377C1D9DBD9200B21855 /* Cell.swift in Sources */,
+				178FE7222ADDE1F700B93265 /* Configurable.swift in Sources */,
+				178FE7202ADDE0E400B93265 /* HeroCell.swift in Sources */,
 				B5BA4AD41DC80C38001CE247 /* AsyncFetcherOperation.swift in Sources */,
 				B5533E4D1DC8F9FB0089DFF7 /* DisplayData.swift in Sources */,
+				17C656732AD9997D00B790DD /* ViewController.swift in Sources */,
 				B5B537801D9DBDD200B21855 /* AsyncFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +502,7 @@
 				DEVELOPMENT_TEAM = 8J2UZ42BMU;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Collection View Prefetching";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -512,6 +537,7 @@
 				DEVELOPMENT_TEAM = 8J2UZ42BMU;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Collection View Prefetching";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -762,6 +788,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TK3588R6YS;
 				INFOPLIST_FILE = CollectionViewPrefetching/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Collection View Prefetching";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -786,6 +813,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TK3588R6YS;
 				INFOPLIST_FILE = CollectionViewPrefetching/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Collection View Prefetching";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
